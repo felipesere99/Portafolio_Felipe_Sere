@@ -1,0 +1,6 @@
+¿Cuál es la capacidad inicial del siguiente stringbuilder?
+StringBuilder sb = new StringBuilder("Able was I ere I saw
+Elba.");
+
+Es la longitud de la cadena que le pasás al constructor, más 16 caracteres adicionales que Java reserva por defecto.
+"Able was I ere I saw Elba." tiene 27 caracteres, 27 + 16 = 43, la capacidad inicial del StringBuilder es de 43 caracteres.

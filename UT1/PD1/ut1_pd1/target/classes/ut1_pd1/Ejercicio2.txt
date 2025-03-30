@@ -1,0 +1,21 @@
+public class Zumbido {
+    public static void desconcertar (String dirigible) {
+        (3)System.out.println (dirigible);
+        sipo ("ping", -5);
+    }
+    public static void sipo (String membrillo, int flag) {
+        if (flag < 0) {
+            System.out.println (membrillo + " sup");
+        } else {
+            System.out.println ("ik");
+            (2)desconcertar (membrillo);
+            System.out.println ("muaa-ja-ja-ja");
+    }
+    }
+    public static void main (String[] args) {
+        sipo ("traqueteo", 13);
+    }
+}
+
+a) ¿Cuál es la primera sentencia que se ejecuta?
+System.out.println ("ik");

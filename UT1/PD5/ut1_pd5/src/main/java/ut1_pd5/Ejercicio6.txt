@@ -1,0 +1,88 @@
+substring:
+   Este método lo usás para sacar una parte específica de una cadena. Tenés dos variantes:
+    substring(int beginIndex): Te devuelve la parte de la cadena desde el índice que le digas hasta el final.
+    substring(int beginIndex, int endIndex): Acá le indicás desde dónde hasta dónde querés cortar la cadena (el final no lo incluye).
+   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.substring(6)); // "World!"
+     System.out.println(str.substring(0, 5)); // "Hello"
+
+split:
+   Este método te permite cortar una cadena en pedazos según un delimitador, como una coma o un espacio. Las variantes son:
+    split(String regex): Divide la cadena en todas las partes donde aparece el delimitador que le pasás.
+    split(String regex, int limit): Divide la cadena en las primeras limit-1 ocurrencias del delimitador y deja el resto como está.
+   Ejemplo:
+     String str = "apple,orange,banana";
+     String[] parts = str.split(",");
+     System.out.println(Arrays.toString(parts)); // ["apple", "orange", "banana"]
+
+subSequence:
+   Similar a substring, pero devuelve una CharSequence en lugar de una String.
+   Ejemplo:
+     String str = "Hello World!";
+     CharSequence subSeq = str.subSequence(0, 5);
+     System.out.println(subSeq); // "Hello"
+
+trim:
+   Elimina los espacios en blanco iniciales y finales de la cadena.
+   Ejemplo:
+     String str = "  Hello World!  ";
+     System.out.println(str.trim()); // "Hello World!"
+
+toLowerCase:
+   Convierte todos los caracteres de la cadena a minúsculas.
+   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.toLowerCase()); // "hello world!"
+
+toUpperCase:
+   Convierte todos los caracteres de la cadena a mayúsculas.
+   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.toUpperCase()); // "HELLO WORLD!"
+
+indexOf:
+    Este método te dice en qué posición aparece por primera vez un carácter o una subcadena. Tiene varias variantes:
+    indexOf(int ch): Te dice dónde aparece el carácter que le pasás.
+    indexOf(String str): Te dice dónde aparece la subcadena.
+    indexOf(int ch, int fromIndex): Busca el carácter desde una posición específica.
+    indexOf(String str, int fromIndex): Busca la subcadena desde una posición específica.
+   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.indexOf('o')); // 4
+     System.out.println(str.indexOf("World")); // 6
+
+lastIndexOf:
+Es igual que indexOf, pero te dice la última posición donde aparece el carácter o la subcadena. Tiene varias variantes:
+     1. lastIndexOf(int ch): Devuelve el índice de la última ocurrencia del carácter ch.
+     2. lastIndexOf(String str): Devuelve el índice de la última ocurrencia de la subcadena str.
+     3. lastIndexOf(int ch, int fromIndex): Devuelve el índice de la última ocurrencia del carácter ch comenzando desde fromIndex.
+     4. lastIndexOf(String str, int fromIndex): Devuelve el índice de la última ocurrencia de la subcadena str comenzando desde fromIndex.
+   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.lastIndexOf('o')); // 7
+     System.out.println(str.lastIndexOf("l")); // 9
+
+contains:
+    Este método te dice si la cadena contiene o no una subcadena específica. Te devuelve true o false.   Ejemplo:
+     String str = "Hello World!";
+     System.out.println(str.contains("World")); // true
+
+replace:
+    Este método te permite reemplazar caracteres o subcadenas por otros. Tiene dos variantes:
+      1. replace(char oldChar, char newChar): Reemplaza todas las ocurrencias de oldChar por newChar.
+      2. replace(CharSequence target, CharSequence replacement): Reemplaza todas las ocurrencias de target por replacement.
+    Ejemplo:
+      String str = "Hello World!";
+      System.out.println(str.replace('o', 'a')); // "Hella Warld!"
+
+replaceAll:
+    Este método es como replace, pero usa expresiones regulares (regex) para encontrar lo que querés reemplazar.    Ejemplo:
+      String str = "Hello World!";
+      System.out.println(str.replaceAll("o", "a")); // "Hella Warld!"
+
+replaceFirst:
+    Parecido a replaceAll, pero solo reemplaza la primera aparición de lo que le digas    
+    Ejemplo:
+      String str = "Hello World!";
+      System.out.println(str.replaceFirst("o", "a")); // "Hella World!"

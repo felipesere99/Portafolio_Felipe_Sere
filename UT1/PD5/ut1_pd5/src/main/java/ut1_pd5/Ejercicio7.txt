@@ -1,0 +1,76 @@
+¿qué es la clase StringBuilder? ¿para qué sirve?
+La clase se usa para crear y manipular String de forma mas eficiente que la clase "String",
+StringBuilder sirve para las situaciones donde hay que hacer muchas operaciones modificando
+cadenas ya que reduce el costo de rendimiento comparado con muchos objetos de String.
+Todos los constructores:
+    StringBuilder(): Te arranca un StringBuilder vacío con capacidad para 16 caracteres. 
+    StringBuilder(int capacity): Crea un StringBuilder con la capacidad que queres.
+    StringBuilder(String str): Crea un StringBuilder con el contenido de la cadena especificada.
+    StringBuilder(CharSequence seq): Lo mismo que el anterior, pero para secuencias de caracteres.
+
+    StringBuilder sb1 = new StringBuilder();
+    StringBuilder sb2 = new StringBuilder(50);
+    StringBuilder sb3 = new StringBuilder("Hello");
+    StringBuilder sb4 = new StringBuilder(new StringBuilder("Hello World"));
+
+    System.out.println(sb1); // ""
+    System.out.println(sb2); // ""
+    System.out.println(sb3); // "Hello"
+    System.out.println(sb4); // "Hello World"
+
+setLength(int newLength):
+
+    Acá podés ajustar la longitud de la secuencia de caracteres en el StringBuilder.
+
+    StringBuilder sb = new StringBuilder("Hola");
+    sb.setLength(10);
+    System.out.println(sb); // "Hola\0\0\0\0\0\0"
+
+ensureCapacity(int minimumCapacity):
+
+    Este método te asegura que el StringBuilder tenga al menos la capacidad que le pedís
+
+    StringBuilder sb = new StringBuilder();
+    sb.ensureCapacity(100);
+    System.out.println(sb.capacity()); // 100
+
+append(...):
+
+    Este es el más usado, le vas agregando lo que quieras al final de la secuencia de caracteres. 
+
+    StringBuilder sb = new StringBuilder("Hello");
+    sb.append(" World");
+    sb.append(123);
+    System.out.println(sb); // "Hello World123"
+
+insert(int offset, ...):
+
+    Acá podés meter algo en una posición específica, sin borrar lo que ya estaba.
+
+    StringBuilder sb = new StringBuilder("Hello World");
+    sb.insert(5, ",");
+    System.out.println(sb); // "Hello, World"
+
+delete(int start, int end):
+
+    Borra todo lo que está entre start y end
+
+    StringBuilder sb = new StringBuilder("Hello, World");
+    sb.delete(5, 6);
+    System.out.println(sb); // "Hello World"
+
+deleteCharAt(int index):
+
+    Este es más específico, borra un solo carácter en la posición que le digas.
+
+    StringBuilder sb = new StringBuilder("Hello World");
+    sb.deleteCharAt(5);
+    System.out.println(sb); // "HelloWorld"
+
+reverse():
+
+    Da vuelta la secuencia de caracteres.
+
+    StringBuilder sb = new StringBuilder("Hello");
+    sb.reverse();
+    System.out.println(sb); // "olleH"

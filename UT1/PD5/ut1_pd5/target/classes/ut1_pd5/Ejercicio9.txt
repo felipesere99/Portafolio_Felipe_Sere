@@ -1,0 +1,11 @@
+Considere la siguiente string:
+String hannah = "Did Hannah see bees? Hannah did.";
+a) ¿qué valor muestra la expresión “hannah.length”?
+32
+
+b) ¿qué valor es retornado por la invocación del método “hannah.charAt(12)”?
+"e"
+
+c) Escribe una expresión que referencie la letra “b” en la string referida por “hannah".
+
+String b = hannah.indexOf('b');

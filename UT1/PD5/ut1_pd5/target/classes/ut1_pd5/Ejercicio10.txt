@@ -1,0 +1,4 @@
+¿Cuán larga es las string devuelta por la siguiente expresión? ¿cuál es la string?
+"Was it a car or a cat I saw?".substring(9, 12)
+
+El largo de la cadena devuelta es 3 caracteres, y el string es = "car".
