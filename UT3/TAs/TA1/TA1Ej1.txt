@@ -1,0 +1,41 @@
+Ejercicio 1:
+
+Objeto Producto:
+Nombre del producto (char[30]) --> 60 bytes
+ID del producto (char[20]) --> 40 bytes
+Precio unitario (float) --> 4 bytes
+Cantidad en stock (int) --> 4 bytes
+
+TOTAL de uso de memoria por Producto: 108 bytes
+
+
+
+Pregunta 1.
+
+Uso de memoria para una lista de n Productos:
+
+--> Si es con arreglos - n * 108 bytes + 8 * cantidad de elementos vacíos, si es que los tenemos
+
+--> Si es con listas enlazadas - n * (108 + 8 bytes) //108 corresponden al Producto y 8 corresponden al puntero al siguiente nodo.
+
+
+Preguntas 2 y 3.
+
+Si conocemos de antemano la cantidad de productos máxima que se venderán, nos sirve utilizar un array, ya que ocupa menos memoria y es más eficiente a la hora de ordenar los elementos respecto a la lista enlazada. También nos permite apuntar directamente a cualquier elemento a través de su índice, permitiéndonos modificar fácilmente atributos como su precio y su stock.
+Sin embargo, si la lista puede potencialmente crecer y decrecer mucho, puede llegar a ser más eficiente el uso de una lista enlazada en vez de dejar un array con mucha memoria "extra" inutilizada, esto es porque no tiene un limite fijo. Pero esto conlleva a que el costo de memoria será mayor por los punteros adicionales.
+
+Analizando en particular cada operación que se desea realizar:
+
+Incorporar un nuevo producto -
+	Usando un array se puede hacer en orden 1 
+	Usando una lista enlazada simple (no bidireccional) se puede hacer en orden n
+
+Agregar stock y reducir stock -
+	En ambas estructuras, se debe buscar el producto antes de modificar su stock.
+	En array se puede hacer en orden n o en logn si esta ordenado.
+	En lista enlazada simple se hace en orden n
+
+Listar los productos en forma ordenada -
+	Usando un array puede ser de orden n si estos se ingresan ordenadamente, sino es 
+	de orden O(n log n)
+	Usando una lista enlazada puede hacer en orden n log n

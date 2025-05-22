@@ -1,0 +1,89 @@
+Crear los elementos y la lista: 
+    Se crean los nodos, a estos se les pasa por su constructor
+    la etiqueta y el dato que van a llevar, se crea la lista y esta en un principio va a estar vacia
+    Precondiciones: No hay
+    Postcondiciones: Va a haber elmentos creados con sus respectivos atributos y una lista vacia.
+    Pseudo:
+        lista <- nueva Lista
+        nodo <- nuevo Nodo(clave, dato)
+
+Insertar un elemento en una lista (al final, la lista no está ordenada):
+    Se inserta un nuevo al final de una lista
+    Precondiciones: Que exista una lista, puede estar vacia o no.
+                    Que exista un elemento en condiciones de poder ser agregado.
+    Postcondiciones: La lista si estaba vacia deja de estarlo, o se agranda en el caso de que no lo estuviera.
+                    El elemento se encuentra ultimo en la lista
+    Pseudo:
+        insertarEnLista(lista, nodo)
+            Si lista esta vacia entonces
+                lista.primero <- nodo
+            Sino
+                actual <- lista.primero
+                Mientras actual.siguiente sea distinto a null hacer
+                    actual <- actual.siguiente
+                Fin mientras
+                actual.siguiente <- nodo
+            Fin si
+
+Buscar un elemento en una lista:
+    Recorre la lista buscando un elemento por su clave.
+    Precondiciones: Debe existir una lista con elementos en ella
+                    La clave debe ser valida
+    Postcondiciones: Si se encuentra el elemento se devuelve este con su dato.
+                     Si no se encuentra se devuelve un null.
+    Pseudo:
+        buscarEnLista(clave)
+            Si lista esta vacia entonces
+                devolver null
+            Sino
+                actual <- lista.primero
+                Mientras actual sea distinto a null hacer
+                    Si actual.clave es igual a clave
+                        devolver actual
+                    actual <- actual.siguiente
+                Fin mientras
+                devolver null
+            Fin si
+
+Listar (imprimir) todos los elementos de una lista:
+    Recorre la lista y muestra cada elemento por consola o por pantalla.
+    Precondiciones: Debe existir una lista, puede tener elementos o estar vacia
+    Postcondiciones: Se imprimen todos los elementos de la lista
+    Pseudo:
+        imprimirLista(lista)
+            Si lista esta vacia entonces
+                Imprimir la lista esta vacia
+            Sino
+                actual <- lista.primero
+                Mientras actual sea distinto a null hacer
+                    Imprimir actual
+                    actual <- actual.siguiente
+                Fin mientras
+            Fin si
+
+Eliminar un elemento de una lista, dada su clave:
+    Elimina el primer elemento en la lista cuya clave coincide con la clave dada.
+    Precondiciones:Debe existir una lista con elementos en ella
+                    La clave debe ser valida
+    Postcondiciones:Si se encuentra el elemento este se Elimina
+                    La lista se reduce en 1.
+                    Si no se encuentra el elemento no hay cambios en la lista.
+    Pseudo:
+        eliminarDeLista(lista, clave)
+            Si lista está vacía entonces
+                devolver falso
+            
+            Si lista.primero.clave es igual a clave entonces
+                lista.primero ← lista.primero.siguiente
+                devolver verdadero
+            
+            actual ← lista.primero
+            Mientras actual.siguiente sea distinto a null y actual.siguiente.clave sea distinto a clave hacer
+                actual ← actual.siguiente
+            Fin Mientras
+            
+            Si actual.siguiente es igual a null entonces
+                devolver falso
+            
+            actual.siguiente ← actual.siguiente.siguiente
+            devolver verdadero

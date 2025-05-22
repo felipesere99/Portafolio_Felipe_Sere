@@ -1,0 +1,27 @@
+PSEUDO:
+TLista.InsertarArticulo(articulo: tipoElemento)
+COM
+	Si lista.vacia() entonces
+		primero <- articulo
+	Sino
+		Actual <- primero
+		Mientras Actual.siguiente <> nulo hacer
+			Actual <- Actual.siguiente
+		Fin mientras
+		Actual.siguiente <- articulo
+	FinSi
+Fin
+
+LN: Si la lista esta vacía, se inserta el elemento en primer lugar. Sino, entraremos en un bucle para pasar por todos los elementos hasta llegar al final de la fila, esto es para llegar al final e insertar el nuevo elemento en ese lugar.
+
+PRECONDICIONES:
+	El nuevo elemento debe existir.
+	La etiqueta del elemento debe ser valida.
+	La lista debe existir.
+
+POSTCONDICIONES:
+	Si la lista estaba vacía antes de insertar, ahora el nuevo
+	elemento es el primero y la cantidad de elementos es 1.
+	La lista tendrá un elemento mas.
+	El elemento insertado se encuentra en la lista.
+	El elemento se encuentra al final de la lista

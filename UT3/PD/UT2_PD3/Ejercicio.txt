@@ -1,0 +1,41 @@
+5.4)a)Esta afirmación es correcta. Si ambas funciones tienen la misma complejidad asintótica, la suma también estará en ese orden. 
+    Esto se debe a que, en análisis asintótico, sumas constantes no alteran el comportamiento de crecimiento dominante.
+    b)Similar al caso anterior. La diferencia entre dos funciones del mismo orden también resulta en algo que sigue siendo de ese orden. 
+    Así que esto también es cierto.
+    c)Esto implica que las dos funciones son proporcionales, pero no hay información suficiente para asegurar que la proporción entre ellas es constante. 
+    No podemos afirmar que esto sea cierto.
+    d)Dado que ambas funciones son del mismo orden, esta afirmación es válida.
+
+5.5)Este ejercicio nos plantea un escenario en el que primero se ejecuta un algoritmo con complejidad O(N) y luego otro con la misma complejidad. 
+    El costo total será la suma de ambos tiempos de ejecución. Y, dado que ambos son O(N), el costo total sigue siendo O(N). En análisis de complejidad, 
+    sumar dos operaciones con la misma complejidad no cambia el orden.
+
+5.6)Aquí te piden agrupar funciones por su equivalencia en notación O. Veamos:
+    X^2 y X^2 - X: Ambas funciones están dominadas por el término cuadrático, por lo tanto, O(X^2)
+    X y X + X:Ambos son lineales, así que son O(X)
+    X^x y (X^x)/X-1: Estas funciones crecen de manera exponencial, por lo que se agrupan bajo O(X^2)
+
+5.11)Te piden evaluar directamente el sumatorio triple que precede al Teorema 5.1. Esto apunta a verificar la validez de la fórmula resultante, 
+    asegurando que se siguen correctamente los pasos en el desarrollo. Acá, lo importante es aplicar rigurosamente las reglas de la sumatoria, 
+    asegurándose de que no se pierda ningún término y que las manipulaciones algebraicas estén bien justificadas.
+
+5.12)Un algoritmo requiere 0,4 ms para una entrada de 100 elementos. Ahora, te piden calcular el tiempo para una entrada de 500 elementos, 
+    dependiendo de la complejidad del algoritmo:
+    a: Lineal: Si el algoritmo es lineal entonces el tiempo crece proporcionalmente. Si con 100 elementos tarda 0,4 ms, con 500 elementos tardará 5 veces más.
+    b: O(N log N): El crecimiento es un poco más complejo, se deberia calcular (500 log(500))/(100 log(100)) * 0,4, este calculo da un mayor tiempo que el lineal.
+    c: O(N^2): el tiempo aumenta proporcionalmente al cuadrado del tamaño de la entrada. Por lo tanto, con 500 elementos, tardará (500/100)^2 = 25 veces más, entonces 0,4 * 25 = 10 ms.
+    d: Cubico: para un algoritmo cúbico (O(N^3))  el tiempo aumentará proporcionalmente al cubo del tamaño de la entrada. En este caso, tardaría (500/100)^3= 125 veces más,
+    entonces 0,4 * 125 = 50 ms.
+
+5.13)Te piden calcular el tiempo de ejecución manual para dos operaciones:
+
+    a. Sumar dos enteros de N dígitos:
+    Sumar dos enteros de N dígitos es una operación que generalmente se realiza en tiempo lineal, O(N), ya que se requiere recorrer los N dígitos, sumando uno por uno.
+
+    b. Multiplicar dos enteros de N dígitos:
+    La multiplicación, en cambio, en su forma más básica, tiene una complejidad de O(N^2), porque cada dígito del primer número debe multiplicarse por 
+    cada dígito del segundo número, lo que genera un producto cuadrático.
+
+5.14)Este ejercicio te pide calcular cuántas veces se ejecuta la instrucción más interna del algoritmo cuadrático que resuelve el problema de la suma máxima de subsecuencia contigua. 
+    Sabemos que un algoritmo cuadrático ejecuta la operación más interna O(N^2) veces, así que si N=10.000.000, la instrucción se ejecutará alrededor de 10^14 veces. 
+    Dependiendo de la velocidad de la computadora y la eficiencia de la implementación, podrías estimar el tiempo necesario para completar la tarea, pero el conteo sería 10^14 veces.

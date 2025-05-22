@@ -1,0 +1,12 @@
+TA9 - Ejercicio 1:
+A) En equipo lo pensamos como es una lista linkedList en el caso de un supermercado, 
+pensamos en un producto al cual se termina su stock entonces este se elimina de una 
+lista que se trata de los productos que hay en el momento, pero el objeto del producto 
+se mantiene creado en la memoria para cuando vuelva a haber stock este sea agregado 
+nuevamente a la lista.
+B) Como en la primera parte seguimos con la misma idea de un supermercado, en este caso 
+se nos ocurre un producto el cual no se va a vender más, por eso lo quitamos de la lista 
+y para que este se elimine cambiando sus atributos y referencias a null, esto hace que el 
+garbage collector de java se encargue de eliminarlo.
+C) Otro método de "Eliminar" un elemento de la lista, podría ser agregarle un atributo 
+booleano que indique si este esta disponible para su uso o no.

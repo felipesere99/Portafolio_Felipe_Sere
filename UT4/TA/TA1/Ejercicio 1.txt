@@ -1,0 +1,5 @@
+Preorden: X, B, A, J, R, T, M, S, W, C, Z, F
+
+Postorden: R, T, J, A, B, C, F, Z, W, S, M, X
+
+Inorden: A, R, J, T, B, X, M, S, C, W, F, Z

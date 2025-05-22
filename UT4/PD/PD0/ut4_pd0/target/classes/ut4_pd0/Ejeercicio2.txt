@@ -1,0 +1,21 @@
+Precondición:
+    expresion es un arreglo de cadenas que contiene una expresión aritmética en notación prefija, con operadores y operandos válidos.
+Postcondición:
+    Se ha construido un árbol binario que representa la expresión aritmética, con operadores en los nodos internos y operandos en las hojas.
+
+Algoritmo ConstruirArbolPrefijo(expresion)
+COM
+    pila = nueva Pila
+    Para cada símbolo en la expresión de derecha a izquierda hacer
+        Si símbolo es un operador entonces
+            nodo = nuevo Nodo(símbolo)
+            nodo.hijoDerecho = pila.desapilar()
+            nodo.hijoIzquierdo = pila.desapilar()
+            pila.apilar(nodo)
+        Sino si símbolo es un operando entonces
+            nodo = nuevo Nodo(símbolo)
+            pila.apilar(nodo)
+    devolver pila.desapilar()  // La raíz del árbol
+Fin
+
+LN: El algoritmo toma una expresión aritmética en notación prefija y construye un árbol binario. Recorre la expresión de derecha a izquierda. Cada vez que encuentra un operador, crea un nodo y lo conecta a dos operandos que ha guardado en una pila. Si encuentra un operando, lo apila como un nodo sin hijos. Al final, el último nodo en la pila es la raíz del árbol binario que representa toda la expresión.

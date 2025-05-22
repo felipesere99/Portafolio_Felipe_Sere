@@ -1,0 +1,41 @@
+TDALista.union(TDALista lista1, TDALista lista2): TDALista
+	Conjunto <- new TDALista
+    	actual <- lista1.primero
+    	Mientras actual <> nulo hacer
+        	Conjunto.agregarSiNoExiste(actual.dato)
+        	actual <- actual.siguiente
+
+    	actual <- lista2.primero
+    	Mientras actual <> nulo hacer
+        	Conjunto.agregarSiNoExiste(actual.dato)
+        	actual <- actual.siguiente
+    	Devolver Conjunto
+Fin
+
+LN: El metodo unión toma dos listas que representan conjuntos y construye una nueva lista que contiene todos los elementos que aparecen en al menos una de las listas originales. Si un elemento aparece en ambas, se agrega solo una vez. El orden de los elementos en la lista resultante no importa.
+
+Pre: Las listas pueden estar vacías o tener elementos. Cada lista puede contener o no elementos repetidos.
+
+Post:Las listas creadas previamente no sufren cambios. La lista devuelta contiene todos los elementos únicos presentes en las dos listas que pasamos por parametros. No hay elementos repetidos en la lista resultado.
+
+Analisis de TE: Recorrer ambas listas toma O(n + n), donde n es la longitud de las listas, cada inserción requiere verificar si el elemento ya existe, en el peor caso por cada insercion seria O(n), entonces el tiempo total en el peor caso es O((n+n)*n)) => O(n^2)
+
+
+TDALista.interseccion(TDALista lista1, TDALista lista2): TDALista
+	Conjunto <- new TDALista
+    	actual <- lista1.primero
+    	Mientras actual <> nulo hacer
+       		Si lista2.contiene(actual.dato) entonces
+            			Conjunto.agregarSiNoExiste(actual.dato)
+        		actual <- actual.siguiente
+    	Devolver Conjunto
+Fin
+
+LN:El metodo intersección toma dos listas que representan conjuntos y construye una nueva lista que contiene solo los elementos que aparecen en ambas listas originales. Si un elemento está solo en una de ellas, no se incluye. El orden no importa.
+
+Pre: Las listas pueden estar vacías o tener elementos. Cada lista puede contener o no elementos repetidos.
+
+Post:Las listas creadas previamente no sufren cambios. La lista devuelta contiene solo los elementos comunes en las dos listas que pasamos por parametros. No hay elementos repetidos en la lista resultado.
+
+Analisis de TE: Se recorren todos los elementos de la primer lista O(n), donde n es el tamaño de esta, por cada elemento verifica que no este en la otra lista, en el peor de los casos la recorre totalmente, entonces el tiempo total es O(n*n) => O(n^2)
+

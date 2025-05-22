@@ -1,0 +1,40 @@
+Algoritmo SustituirVariables(nodo, valoresVariables)
+COM
+    Si nodo es una hoja y es una variable entonces
+        nodo.valor = valoresVariables[nodo.valor]
+    Sino si nodo no es una hoja entonces
+        SustituirVariables(nodo.hijoIzquierdo, valoresVariables)
+        SustituirVariables(nodo.hijoDerecho, valoresVariables)
+Fin
+Precondición:
+    nodo es la raíz de un árbol binario de expresión aritmética.
+    valoresVariables es un diccionario o mapa que asocia variables (como cadenas) con sus valores numéricos.
+Postcondición:
+    Todas las variables del árbol han sido sustituidas por sus valores correspondientes.
+LN: El algoritmo recorre el árbol de expresión aritmética, y en cada nodo hoja, verifica si es una variable. Si lo es, la sustituye por su valor correspondiente que se encuentra en un diccionario (valoresVariables). Si el nodo no es una hoja, se llama recursivamente a la función para sus subárboles izquierdo y derecho. Este proceso asegura que cada variable en el árbol sea reemplazada por su valor antes de evaluarlo.
+
+
+Algoritmo EvaluarExpresion(nodo)
+COM
+    Si nodo es una hoja entonces
+        devolver nodo.valor
+    Sino
+        valorIzquierdo = EvaluarExpresion(nodo.hijoIzquierdo)
+        valorDerecho = EvaluarExpresion(nodo.hijoDerecho)
+        Si nodo.operador = '+' entonces
+            devolver valorIzquierdo + valorDerecho
+        Si nodo.operador = '-' entonces
+            devolver valorIzquierdo - valorDerecho
+        Si nodo.operador = '*' entonces
+            devolver valorIzquierdo * valorDerecho
+        Si nodo.operador = '/' entonces
+            devolver valorIzquierdo / valorDerecho
+Fin
+
+Precondición:
+        nodo es la raíz de un árbol binario de expresión aritmética donde las variables han sido sustituidas por sus valores.
+Postcondición:
+        El resultado de la expresión aritmética representada por el árbol es calculado y devuelto.
+
+LN: El algoritmo evalúa la expresión recorriendo el árbol en postorden. Si llega a una hoja, devuelve su valor (ya sea un número o una constante). Si el nodo es un operador, evalúa primero sus hijos izquierdo y derecho (subárboles), realiza la operación correspondiente (suma, resta, multiplicación o división) y devuelve el resultado de la operación.
+

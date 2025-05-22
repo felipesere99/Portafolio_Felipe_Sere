@@ -1,0 +1,26 @@
+ booleano controlCorchetes(TDALista<char> listaDeEntrada):
+	pilaCorchetes <- new TDApila<char>;	O(1)
+	actual <- listaDeEntrada.primero	O(1)
+	Mientras actual <> nulo hacer		O(n)
+		si actual == "{" entonces	O(1)
+			pila.push("{")		O(1)
+		finSi
+		si actual == "}" && pilaCorchetes.tamaño > 0 entonces	O(1)
+			pila.pop()	O(1)
+		sino	O(1)
+			devolver false		O(1)
+		finSi
+		actual = actual.siguiente	O(1)
+	FinMientras
+	si pila.tamaño == 0 entonces	O(1)
+		devolver true		O(1)
+	sino
+		devolver false		O(1)
+	finSi
+fin
+
+LN: Comenzamos creando una pila vacia, luego asignamos una variable "actual" con el primer elemento de la lista, comenzamos a recorrer la lista, verificamos cada elemento de si se trata de un corchete abirto ({) o cerrado (}), si se trata de uno abierto lo agregamos a la pila, si se trata de uno cerrado verificamos que en la pila ya haya uno abierto para luego borrarlo porque tomamos en cuenta que son un par, en caso de que no haya ninguno en la pila devolvemos false. Al final verificamos si la pila esta vacia o no, si esta vacia significa que cada corchete abierto tiene uno cerrado pero si esta no esta vacia significa que quedo algún corchete sin cerrar.
+
+Precondiciones: Tenemos un TDALista<char> no vacío, cuyos elementos son únicamente llaves ("{" y "}") en cualquier cantidad y combinación.
+
+Postcondiciones: La lista de entrada no se modificó. Obtenemos un booleano que indica si la secuencia de llaves ingresada es válida o no.
