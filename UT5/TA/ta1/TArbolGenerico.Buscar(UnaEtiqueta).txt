@@ -1,0 +1,27 @@
+TArbolGenerico.Buscar(UnaEtiqueta):
+COM
+	SI Raiz <> nulo
+		Raiz.Buscar(UnaEtiqueta)
+	Sino
+		Devolver nulo
+	FinSi
+FIN
+
+TNodoArbolGenerico.Buscar(unaEtiqueta):
+COM
+	Si etiqueta == unaEtiqueta entonces
+		devolver Nodo
+	FinSi
+	UnHijo <- Nodo.PrimerHijo
+	Mientras UnHijo <> nulo hacer
+		UnHijo.Buscar(unaEtiqueta);
+		UnHijo <- UnHijo.HermanoDerecho
+	Fin Mientras
+	Devolver nulo
+FIN
+
+LN: Comenzamos con el caso base verificando si la etiqueta del nodo coincide con la etiqueta pasada por parámetro, luego asignamos a la variable unHijo el hijo de ese nodo, luego a traves de un mientras vamos recorriendo los hermanos de ese nodo y en caso de que alguno de esos nodos tenga un hijo se recorre recursivamente, luego si no encontramos el nodo a buscar devolvemos nulo
+Pre:El arbol debe existir
+Post: El arbol no se modifica
+Devuelve nulo si no encuentra o sino un nodo.
+

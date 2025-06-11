@@ -1,0 +1,48 @@
+TArbolTrie.ConstruirIndice(String Texto):
+COM
+	Para cada linea de Texto hacer
+		TArbolTrie.ConstruirIndice(String palabra,int indice)
+	Fin para cada
+FIN
+
+TNodoTrie.ConstruirIndice(String unaPalabra,int unIndice):
+Comienzo
+	nodoActual  this
+	Para cada caracter car de unaPalabra hacer
+		unHijo  nodoActual.obtenerHijo(car)
+		Si unHijo = nulo entonces
+			unHijo  crear nuevo nodo trie
+			nodoActual.agregar(unHijo, car) // depende de la
+							estructura
+		fin si
+		nodoActual  unHijo
+	fin para cada
+	nodoActual.esFindePalabra  VERDADERO
+	nodoActual.dato <- unIndice
+Fin
+
+TArbolTrie.BuscarIndice(String Texto):
+COM
+	Para cada palabra de Texto hacer
+		TArbolTrie.BuscarIndice(palabra, indice)
+	Fin para cada
+FIN
+
+TNodoTrie.BuscarIndice(String unaPalabra):
+Comienzo
+	nodoActual  this
+	Para cada caracter car de unaPalabra hacer
+		unHijo  nodoActual.obtenerHijo (car) //depende de la estructura del
+								nodo
+		Si unHijo = nulo entonces
+			devolver nulo
+		Sino
+			nodoActual  unHijo
+		fin si
+	fin para cada
+	Si nodoActual.esFinDePalabra entonces
+		devolver nodoActual.dato.indice
+	sino
+		devolver nulo
+	fin si
+Fin
