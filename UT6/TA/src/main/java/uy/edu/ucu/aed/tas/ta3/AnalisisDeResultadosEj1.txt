@@ -1,0 +1,17 @@
+A partir de los resultados obtenidos, podemos afirmar que son 
+coherentes con lo esperado, dado las características de las estructuras 
+de datos utilizadas.
+
+Por un lado, las listas (especialmente la LinkedList) resulta especialmente ineficiente
+en cuanto a tiempo de ejecución, debido a que sus operaciones tienen O(N). En contrapartida,
+resultan muy eficientes en cuanto a uso de memoria. Sin embargo, entendemos que esto último no
+compensa lo anteriormente mencionado, ya que hay otras estructuras que se comportan mucho más 
+eficientemente en cuanto a uso de memoria y tiempo de ejecución.
+
+Por otra parte, el Trie resulta muy eficiente en tiempo de ejecución, pero no así en uso de
+memoria. Esto se debe a que cada nodo tiene una cantidad de hijos igual a la del alfabeto del
+trie, por lo que hay mucho espacio de memoria utilizado en el que no hay información útil.
+
+Por último, concluimos que las estructuras más eficientes son los Maps (en especial HashMap). 
+Si, por ejemplo, los comparamos con las listas, utilizan aproximadamente un 30% más de memoria, 
+pero una fracción mínima de tiempo.

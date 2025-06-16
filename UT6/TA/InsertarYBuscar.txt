@@ -1,0 +1,28 @@
+TTablaHASH.Buscar(clave k):
+	T indica el vector de claves
+	comparaciones = 0
+	i = 0
+	repetir
+		j = h(k,i)
+		si T[j] = k entonces
+			devolver comparaciones, salir
+		sino, i = i + 1
+		comparaciones += 1
+	hasta que vacio(T[j]) o i = m
+	devolver comparaciones
+
+
+TTablaHASH.Insertar(clave k)
+	T indica el vector de claves
+	comparaciones = 0
+	i = 0
+	repetir
+		j = h(k,i)
+		si vacio(T[j]) entonces
+			T[j] = k, devolver comparaciones, salir
+		sino, i = i + 1
+		comparaciones += 1
+	hasta que i = m
+	error “sobrecarga de tabla de hash"
+
+	

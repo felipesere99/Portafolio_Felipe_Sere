@@ -1,0 +1,9 @@
+Los resultados son coherentes con la teoría. 
+En el caso del trie, que está diseñado para búsquedas por prefijos, le operación
+de predicción se ejecuta unas diez veces más rápido que cualquier otra, aunque en detrimento de
+la eficiencia en el uso de memoria. 
+Por otra parte, en el caso del hashMap y la LinkedList, se comportan acorde a lo esperado:
+utilizando mayor tiempo pero menos memoria. Lo único inesperado es el hecho de que el hashMap ejecute
+unas cinco veces más lento que la LinkedList, ya que, en teoría, recorrer todos los elementos de cualquiera
+de las dos estructuras debería ser una operación de O(N). Esto puede deberse a algún error en la implementación
+de la medición de la búsqueda con predicción, o debido a la implementación de hashMap de Java.

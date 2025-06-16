@@ -1,0 +1,16 @@
+algoritmo,tiempo,memoria
+MedicionPredecirLinkedList,0.16854095,0.8938446
+MedicionPredecirHashMap,0.49903515,1.267334
+MedicionPredecirTrie,0.035247773,9.966551
+algoritmo,tiempo,memoria
+MedicionPredecirLinkedList,0.16612837,0.8938446
+MedicionPredecirHashMap,0.49956992,1.267334
+MedicionPredecirTrie,0.033869807,9.966551
+algoritmo,tiempo,memoria
+MedicionPredecirLinkedList,0.4542165,0.8938446
+MedicionPredecirHashMap,0.49833867,1.267334
+MedicionPredecirTrie,0.038512804,9.966551
+algoritmo,tiempo,memoria
+MedicionPredecirLinkedList,0.2168352,0.8938446
+MedicionPredecirHashMap,0.9012023,1.267334
+MedicionPredecirTrie,0.0296347,9.966551
